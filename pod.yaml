@@ -1,0 +1,16 @@
+apiVersion: v1                  #defined by kubernetes
+kind: Pod                       #what object to create
+metadata:
+  name: newpod                  #Pad name
+  labels:
+    app: myapp
+spec:                           # Pod specification
+  containers:
+  - name: con1                  #name of conatiner
+    image: nginx:1.14.2          # image for container creation
+    ports:
+    - containerPort: 80          #contianer port
+  - name: con2
+    image: tomcat:latest
+    ports:
+    - containerPort: 8080
