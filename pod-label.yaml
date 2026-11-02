@@ -16,3 +16,8 @@ spec:                           # Pod specification
     - containerPort: 8080
   nodeSelector:                #Decide on which node POD should create.
     cpu: ryzen
+  tolerations:
+  - key: color
+    operator: Equal
+    value: red
+    effect: NoExecute

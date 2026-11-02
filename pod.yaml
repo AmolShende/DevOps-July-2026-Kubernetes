@@ -1,9 +1,10 @@
 apiVersion: v1                  #defined by kubernetes
 kind: Pod                       #what object to create
 metadata:
-  name: newpod                  #Pad name
+  name: newpod1                  #Pad name
   labels:
     app: myapp
+    env: dev
 spec:                           # Pod specification
   containers:
   - name: con1                  #name of conatiner
@@ -14,3 +15,4 @@ spec:                           # Pod specification
     image: tomcat:latest
     ports:
     - containerPort: 8080
+  nodeName: master
