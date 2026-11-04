@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydep
+  labels:
+    app: mydep                   # Label of Deloyment object.
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mydep               # Deployment object will select with the given label
+  template:
+    metadata:
+      labels:
+        app: mydep            # Labels assigned on POD.
+    spec:
+      containers:
+      - name: con1
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
